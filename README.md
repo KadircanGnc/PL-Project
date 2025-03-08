@@ -8,9 +8,9 @@ Group Members:
 20200808028 Kaan Yılmaz
 20210808605 Barış Ayhan
 
-!!!
 ## Syntax
 
+```
 program:
     statements endStatement {printf("Program is valid\n");}
 ;
@@ -140,6 +140,7 @@ endStatement:
 commentStatement:
     COMMENT  {printf("Comment is valid\n");}
 ;
+```
 
 ## Explanations about the language
 
