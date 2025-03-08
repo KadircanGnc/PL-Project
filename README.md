@@ -2,11 +2,11 @@
 
 This is a project for the CSE-334 Programming Languages course. We are creating our own programming language using the dynamics of the course.
 
-Group Members: 
-20200808082 Kadir Can Genç
-20200808080 Önder Polatdemir
-20200808028 Kaan Yılmaz
-20210808605 Barış Ayhan
+## Group Members: 
+- 20200808082 Kadir Can Genç
+- 20200808080 Önder Polatdemir
+- 20200808028 Kaan Yılmaz
+- 20210808605 Barış Ayhan
 
 ## Syntax
 
@@ -144,59 +144,57 @@ commentStatement:
 
 ## Explanations about the language
 
-name: kokb file extension: kokb
+### kokb Programming Language
 
-Data Types
+### File Extension
+`.kokb`
 
+### Data Types
 Our language supports fundamental data types, including:
+- **Number**
+- **String**
 
-Number
-String
-Conditional Statements
+### Conditional Statements
+Basic conditional statements are supported, including:
+- `if`
+- `else if`
+- `else`
 
-Basic conditional statements are supported in our language, including:
-
-if
-else if
-else
-Comparison Operators
-
+### Comparison Operators
 Our language supports fundamental comparison operators, including:
+- Equal to (`==`)
+- Not Equal to (`!=`)
+- Less than (`<`)
+- Greater than (`>`)
+- Less than or equal to (`<=`)
+- Greater than or equal to (`>=`)
+- Logical OR (`||`)
+- Logical AND (`&&`)
+- Logical NOT (`!`)
 
-Equal to (==)
-Not Equal to (!=)
-Less than (<)
-Greater than (>)
-Less than or equal to (<=)
-Greater than or equal to (>=)
-Logical OR (||)
-Logical AND (&&)
-Logical NOT (!)
-Arithmetic Operations
+### Arithmetic Operations
+Basic arithmetic operations supported:
+- Addition (`+`)
+- Subtraction (`-`)
+- Multiplication (`*`)
+- Division (`/`)
+- Modulus (`%`)
+- Power (`^`)
 
-Basic arithmetic operations are supported in our language, including:
+### Mathematical Abbreviations
+Some shorthand operations are supported:
+- Increment (`++`)
+- Decrement (`--`)
 
-Addition (+)
-Subtraction (-)
-Multiplication (*)
-Division (/)
-Modulus (%)
-Power (^)
-Mathematical Abbreviations
+### Loops
+Our language supports the **while** loop, which operates similarly to the syntax and behavior in JavaScript and Java.
 
-Some shorthand operations are supported for mathematical operations, including:
+### Comment Lines
+Our language supports comment lines, allowing developers to add explanatory or descriptive notes without affecting functionality.
 
-Increment (++)
-decrement (--)
-Loops
-
-Our language supports while loop, which operate similar to the syntax and behavior in JavaScript and Java.
-
-Comment Lines
-
-Our language supports comment lines, which allow developers to add explanatory or descriptive notes within the code without affecting its functionality.
-
-- You can run your program by running the makefile and giving it to myprog as input:
-
+### Running Your Program
+You can run your program using the **Makefile**:
+```sh
 make
 ./myprog < example.kokb
+
