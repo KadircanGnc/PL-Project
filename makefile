@@ -1,6 +1,6 @@
-myprog: myprog.l
-	lex myprog.l
-	gcc -o myprog lex.yy.c -ll
+kokb: kokb.l
+	flex kokb.l
+	gcc -o kokb lex.yy.c -lfl
 
 clean:
-	rm myprog lex.yy.c
+	rm -f kokb lex.yy.c

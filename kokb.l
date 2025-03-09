@@ -1,14 +1,11 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
-
 int errorLineCounter = 1;
 %}
 
-
 %%
-
-"exit"		              { printf("EXIT_COMMAND\n"); }
+"exit"                  { printf("EXIT_COMMAND\n"); }
 ";"                     { printf("SEMICOLON\n"); }
 "print"                 { printf("PRINT\n"); }
 "+"                     { printf("PLUS\n"); }
@@ -24,38 +21,48 @@ int errorLineCounter = 1;
 ">"                     { printf("GREATER_THAN\n"); }
 ">="                    { printf("GREATER_THAN_OR_EQUAL\n"); }
 "<="                    { printf("LESS_THAN_OR_EQUAL\n"); }
-"=="                    { return EQUALS; }
-"!="                    { return NOT_EQUALS; }
-"&&"                    { return AND; }
-"||"                    { return OR; }
-"!"                     { return NOT; }
-"("                     { return LPAREN; }
-")"                     { return RPAREN; }
-"{"                     { return LBRACE; }
-"}"                     { return RBRACE; }
-"["                     { return LBRACKET; }
-"]"                     { return RBRACKET; }
-"if"                    { return IF; }
-"else"                  { return ELSE; }
-"else if"               { return ELSEIF; }
-"while"                 { return WHILE; }
-[a-z][a-zA-Z0-9_]*      { yylval.id = yytext[0]; return IDENTIFIER; }
-[-]?[1-9][0-9]*|0       { yylval.num = atoi(yytext); return NUMBER; }
-["].*["]                {
-                          char* str = malloc(yyleng - 2); 
+"=="                    { printf("EQUALS\n"); }
+"!="                    { printf("NOT_EQUALS\n"); }
+"&&"                    { printf("AND\n"); }
+"||"                    { printf("OR\n"); }
+"!"                     { printf("NOT\n"); }
+"("                     { printf("LPAREN\n"); }
+")"                     { printf("RPAREN\n"); }
+"{"                     { printf("LBRACE\n"); }
+"}"                     { printf("RBRACE\n"); }
+"["                     { printf("LBRACKET\n"); }
+"]"                     { printf("RBRACKET\n"); }
+"if"                    { printf("IF\n"); }
+"else"                  { printf("ELSE\n"); }
+"else if"               { printf("ELSEIF\n"); }
+"while"                 { printf("WHILE\n"); }
+"true"                  { printf("TRUE\n"); }
+"false"                 { printf("FALSE\n"); }
+
+"def"                   { printf("FUNCTION_DEF\n"); }
+
+[a-z][a-zA-Z0-9_]*      { printf("IDENTIFIER: %s\n", yytext); }
+[-]?[1-9][0-9]*|0       { printf("NUMBER: %s\n", yytext); }
+[-]?[0-9]*\.[0-9]+      { printf("FLOAT: %s\n", yytext); }
+["].*["]                { 
+                          char* str = malloc(yyleng - 1);
                           strncpy(str, yytext + 1, yyleng - 2);
-                          yylval.str = str;
-                          return STRING;
+                          str[yyleng - 2] = '\0';
+                          printf("STRING: %s\n", str);
+                          free(str);
                         }
-[\/][\/].*              { return (COMMENT); }      
+[\/][\/].*              { printf("COMMENT\n"); }
 [\n]                    { errorLineCounter++; }
-
-[ \t]+          /* skip whitespace */
-[\r\n]+         /* skip empty lines */ { errorLineCounter++; }
-.                       { yyerror ("unexpected character"); }  
-
+[ \t]+                  /* skip whitespace */
+[\r\n]+                 { errorLineCounter++; } /* skip empty lines */
+.                       { printf("ERROR: unexpected character '%s' at line %d\n", yytext, errorLineCounter); }
 %%
 
 int yywrap(void) {
     return 1;
+}
+
+int main() {
+    yylex();
+    return 0;
 }
