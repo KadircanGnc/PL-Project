@@ -2,7 +2,7 @@
 
 // Testing basic keywords
 exit;
-print "Hello, bkok language!";
+print "Hello, kokb language!";
 
 // Testing variables and assignment
 myVariable = 42;

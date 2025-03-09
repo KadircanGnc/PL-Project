@@ -61,8 +61,3 @@ int errorLineCounter = 1;
 int yywrap(void) {
     return 1;
 }
-
-int main() {
-yylex();
-return 0;
-}
