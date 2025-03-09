@@ -63,6 +63,6 @@ int yywrap(void) {
 }
 
 int main() {
-    yylex();
-    return 0;
+yylex();
+return 0;
 }

@@ -1,3 +1,77 @@
-true;
-false;
-dsad;
+// This is a comment for the bkok language
+
+// Testing basic keywords
+exit;
+print "Hello, bkok language!";
+
+// Testing variables and assignment
+myVariable = 42;
+result = 0;
+
+// Testing arithmetic operations
+result = 10 + 5;
+result = 10 - 5;
+result = 10 * 5;
+result = 10 / 5;
+result = 10 ^ 2;  // power
+result = 10 % 3;  // modulo
+
+// Testing increment and decrement
+myVariable++;
+myVariable--;
+
+// Testing comparison operators
+result = 10 < 20;
+result = 30 > 20;
+result = 10 <= 10;
+result = 20 >= 20;
+result = 15 == 15;
+result = 10 != 20;
+
+// Testing logical operators
+condition1 = true;
+condition2 = false;
+result = condition1 && condition2;
+result = condition1 || condition2;
+result = !condition1;
+
+// Testing parentheses and operator precedence
+result = (10 + 5) * 2;
+
+// Testing braces (blocks)
+{
+    nestedVar = 100;
+    print "This is a nested block";
+}
+
+// Testing brackets
+myArray[0] = 42;
+
+// Testing control structures
+if (x > 10) {
+    print "x is greater than 10";
+}
+else if (x == 10) {
+    print "x is exactly 10";
+}
+else {
+    print "x is less than 10";
+}
+
+// Testing while loop
+counter = 0;
+while (counter < 5) {
+    print "Counter value:";
+    counter++;
+}
+
+//Testing functions
+
+def sum(3 + 4){
+     return a + b;
+}
+
+
+x = sum(a + b);
+
+a = 4.5;
